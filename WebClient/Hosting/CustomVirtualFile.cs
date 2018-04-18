@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Hosting;
 
@@ -18,10 +19,12 @@ namespace WebClient.Hosting
 
         public override Stream Open()
         {
-            var formName = HostingUtils.ParseVirtualPath(path);
+            //assembly location, aspx inside assembly location
+            var data = HostingUtils.ParseVirtualPath(path);
 
+            var ass = Assembly.LoadFile(data.Key);
 
-            throw new NotImplementedException();
+            return ass.GetManifestResourceStream(data.Value);
         }
     }
 }

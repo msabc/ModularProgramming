@@ -8,7 +8,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div style="background-color:red; width:200px;">
+            <button>Go back to when things made sense.</button>
         </div>
     </form>
 </body>
