@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMaster.master.cs" Inherits="WebClient.MainMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Moj naslov</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Moj.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <header>
+                <nav>
+                    <ul>
+                        <li>
+                            <asp:Button Text="Home" runat="server" ID="btnHome" PostBackUrl="~/Default.aspx"/>
+                        </li>
+                        <li>
+                            <asp:Button Text="Fill form" runat="server" ID="btnFill" PostBackUrl="~/Modules/TestFormModule.aspx"/>
+                        </li>
+                        <li>
+                            <asp:Button Text="About" runat="server" ID="btnAbout" PostBackUrl="~/About.aspx" />
+                        </li>
+                        <li>
+                            <asp:Button Text="Contact" runat="server" ID="btnContact" PostBackUrl="~/Contact.aspx" />
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <asp:ContentPlaceHolder ID="Content" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
